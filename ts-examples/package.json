@@ -1,0 +1,25 @@
+{
+  "name": "ts-examples",
+  "version": "1.0.0",
+  "description": "Angular with TypeScript\r <h1>WEB 425 Angular with TypeScript</h1>\r <h2>Contributors</h2>\r <ul>\r   <li>Professor Krasso</li>\r   <li>Angela Martin</li>",
+  "main": "index.js",
+  "scripts": {
+    "person-class": "tsc && node dist/person.class.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/atm951999/web-425.git"
+  },
+  "author": "Angela Martin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/atm951999/web-425/issues"
+  },
+  "homepage": "https://github.com/atm951999/web-425#readme",
+  "devDependencies": {
+    "@types/node": "^16.4.13",
+    "tslint": "^6.1.3",
+    "typescript": "^4.3.5"
+  }
+}
