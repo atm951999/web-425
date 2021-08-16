@@ -1,3 +1,15 @@
+/*
+============================================
+; Title: Assignment 2.3
+; Author: Professor Krasso
+; Date: 15 August 2021
+; Modified By: Angela Martin
+; Description: This program demonstrates the
+; use of Angular for data binding
+;===========================================
+*/
+
+// Imports
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -17,4 +29,6 @@ import { MyDetailsComponent } from './my-details/my-details.component';
   providers: [],
   bootstrap: [AppComponent]
 })
+
+// Export AppModule
 export class AppModule { }
