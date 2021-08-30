@@ -1,0 +1,30 @@
+<!--
+============================================
+; Title: Assignment 3.2
+; Author: Professor Krasso
+; Date: 22 August 2021
+; Modified By: Angela Martin
+; Description: This program demonstrates the
+; use of Angular for passing data to routes
+;===========================================
+-->
+
+<input type="text" [formControl]="txtSearchControl" style="float: right; width: 30%; margin-bottom: 5px" id="field1" class="form-control">
+
+<!-- Create table -->
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Composer ID</th>
+      <th scope="col">Full Name</th>
+      <th scope="col">Genre</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let composer of composers;">
+      <td><a routerLink="/composer-details/{{composer.composerId}}">{{composer.composerId}}</a></td>
+      <td>{{composer.fullName}}</td>
+      <td>{{composer.genre}}</td>
+    </tr>
+  </tbody>
+</table>
