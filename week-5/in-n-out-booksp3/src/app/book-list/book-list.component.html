@@ -1,0 +1,35 @@
+<!--
+============================================
+; Title: Assignment 5.4
+; Author: Professor Krasso
+; Date: 05 September 2021
+; Modified By: Angela Martin
+; Description: This program demonstrates the
+; use of Angular.
+;===========================================
+-->
+
+<div fxLayout="row wrap">
+
+  <h2 style="color: green;">Top 5 Favorite Books</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th *ngFor="let field of header">{{field}}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let book of books |async">
+        <td><a style="text-decoration: none; color: Blue" (click)="showBookDetails(book.isbn)">{{book.isbn}}</a></td>
+        <td>{{book.title}}</td>
+        <td>{{book.numOfPages}}</td>
+        <td>{{book.authors.join(', ')}}</td>
+      </tr>
+    </tbody>
+
+
+  </table>
+
+
+</div>
