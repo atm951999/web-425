@@ -1,0 +1,24 @@
+<!--
+============================================
+; Title: Assignment 6.2
+; Author: Professor Krasso
+; Date: 12 September 2021
+; Modified By: Angela Martin
+; Description: This program demonstrates the
+; use of Angular.
+;===========================================
+-->
+<mat-card>
+  <mat-card-title>{{ book.title }}</mat-card-title>
+  <mat-card-content>
+    <div fxLayout="column">
+      <p>{{ book.isbn }}</p>
+      <p>{{ book.title }}</p>
+      <p>{{ book.numOfPages }}</p>
+      <p>{{ book.authors.join(', ') }}</p>
+    </div>
+    <mat-card-actions>
+      <button mat-raised-button color="accent" matDialogClose="confirm">OK</button>
+    </mat-card-actions>
+  </mat-card-content>
+</mat-card>
