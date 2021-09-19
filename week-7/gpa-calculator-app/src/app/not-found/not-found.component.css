@@ -1,9 +1,18 @@
+/*
+============================================
+; Title: Assignment 6.4
+; Author: Professor Krasso
+; Date: 12 September 2021
+; Modified By: Angela Martin
+; Description: This program demonstrates the
+; use of Angular.
+===========================================
+*/
+
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Lato&display=swap');
 
 .container {
   position: relative;
-
-
 }
 
 .text-block {

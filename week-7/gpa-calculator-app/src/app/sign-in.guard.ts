@@ -1,3 +1,15 @@
+/*
+============================================
+; Title: Assignment 6.4
+; Author: Professor Krasso
+; Date: 12 September 2021
+; Modified By: Angela Martin
+; Description: This program demonstrates the
+; use of Angular.
+===========================================
+*/
+
+// Imports
 import { Injectable } from '@angular/core';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, Router } from '@angular/router';
 import { Observable } from 'rxjs';
