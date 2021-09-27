@@ -11,70 +11,37 @@
 
 // Imports
 import { Injectable } from '@angular/core';
-import { IBook } from './book.interface';
-import { Observable, of } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { HttpClient, HttpParams } from '@angular/common/http';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class BooksService {
+  isbns: Array<string> = [
+    '0345339681',
+    '0261103571',
+    '9780593099322',
+    '9780261102361',
+    '9780261102378',
+    '9780590302715',
+    '9780316769532',
+    '9780743273565',
+    '9780590405959'
+  ];
 
-  books: IBook[]
+  constructor(private http: HttpClient) {
 
-  constructor() {
-    this.books = [
-      {
-        isbn: "852147963",
-        title: "Hello Gorgeous",
-        authors: ["William Mann"],
-        description: "Good Book",
-        numOfPages: 600
-      },
-      {
-        isbn: "852147963",
-        title: "Harry Potter and the Chamber of Secrets",
-        authors: ["J.K. Rowling"],
-        description: "Excellent Read",
-        numOfPages: 726
-      },
-      {
-        isbn: "852147963",
-        title: "Harry Potter and the Philosophers Stone",
-        authors: ["J.K. Rowling"],
-        description: "Good Book",
-        numOfPages: 768
-      },
-      {
-        isbn: "852147963",
-        title: "Clan of the Cavebear",
-        authors: ["Jean M. Auel"],
-        description: "Awesome Book",
-        numOfPages: 840
-      },
-      {
-        isbn: "852147963",
-        title: "Harry Potter and the Prisoner of Azkaban",
-        authors: ["J.K. Rowling"],
-        description: "Good Book",
-        numOfPages: 671
-      }
-    ]
    }
 
    // getBooks function
-   getBooks(): Observable<IBook[]> {
-     return of(this.books)
+   getBooks()  {
+    let params = new HttpParams();
 
-   }
+    params = params.append('bibkeys', `ISBN:${this.isbns.join(',')}`);
+    params = params.append('format', 'json');
+    params = params.append('jscmd', 'details');
+    return this.http.get('https://openlibrary.org/api/books', {params: params})
 
-   // getBook function
-   getBook(isbn: string): IBook {
-    for(let book of this.books) {
-      if (book.isbn == isbn) {
-        return book
-      }
-    }
    }
 }

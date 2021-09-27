@@ -23,12 +23,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./book-list.component.css']
 })
 export class BookListComponent implements OnInit {
-  book: IBook
-  header: string[]
-  books: Observable<IBook[]>
+
+  book: IBook;
+  books: Array<IBook> = [];
+
   constructor(private booksService: BooksService, private dialog: MatDialog) {
-    this.books = booksService.getBooks()
-    this.header = ["isbn", "title", "numOfPages", "authors"]
+    this.booksService.getBooks().subscribe(res => {
+      for (let key in res) {
+        if (res.hasOwnProperty(key)) {
+          let authors = [];
+          if (res[key].details.authors) {
+            authors = res[key].details.authors.map(function(author) {
+            return author.name;
+          })
+        }
+      }
+    };
 
   }
 
@@ -39,7 +49,8 @@ export class BookListComponent implements OnInit {
   showBookDetails(isbn: string) {
     this.book = this.booksService.getBook(isbn)
     const dialogRef = this.dialog.open(BookDetailsDialogComponent, {
-      data: {book: this.book},
+      data:
+      {book: this.book},
       disableClose: true,
       width: "800px"
     })
@@ -48,9 +59,6 @@ export class BookListComponent implements OnInit {
       if (result === "confirm") {
         this.book =  null;
       }
-    })
+    });
   }
-
-
-
 }

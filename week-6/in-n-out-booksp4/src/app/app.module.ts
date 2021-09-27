@@ -32,6 +32,8 @@ import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { WishlistComponent } from './wishlist/wishlist.component';
+import { HttpClient } from '@angular/common/http';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -57,7 +59,9 @@ import { WishlistComponent } from './wishlist/wishlist.component';
     MatDialogModule,
     FormsModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    HttpClient,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

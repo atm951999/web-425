@@ -1,5 +1,8 @@
-a:hover {
+.a-link {
+  text-decoration: none;
   cursor: pointer;
-  text-decoration: underline;
 }
 
+.a-link:hover {
+  text-decoration: underline;
+}
