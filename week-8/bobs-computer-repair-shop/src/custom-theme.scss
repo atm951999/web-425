@@ -20,7 +20,7 @@ $bobs-computer-repair-shop-warn: mat-palette($mat-red);
 
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
-$bobs-computer-repair-shop-theme: mat-light-theme((
+$bobs-computer-repair-shop-theme: mat-dark-theme((
   color: (
     primary: $bobs-computer-repair-shop-primary,
     accent: $bobs-computer-repair-shop-accent,

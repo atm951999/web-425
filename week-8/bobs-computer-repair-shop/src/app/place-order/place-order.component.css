@@ -1,0 +1,52 @@
+/*
+============================================
+; Title: Assignment 9.3
+; Author: Professor Krasso
+; Date: 03 October 2021
+; Modified By: Angela Martin
+; Description: This program demonstrates the
+; use of Angular.
+===========================================
+*/
+
+/* Center text*/
+.text-center {
+  text-align: center;
+}
+
+/* Move text to the right*/
+.text-align {
+  padding-left: 17%;
+}
+
+/* Show bottom border*/
+.bottom-border {
+  border-bottom: 3px solid black;
+  padding-bottom: 65px;
+  padding-top: 65px;
+}
+
+/* line up the text boxes*/
+.fee-label {
+  display: inline-block;
+  margin-right: 30px;
+  min-width: 50px;
+}
+
+/* Set the color of the button*/
+.bobs-color {
+  background-color: #880e4f;
+  color: white;
+}
+
+/* Move the button to the right*/
+.right {
+  text-align: right;
+}
+
+/* Set the length of the text boxes*/
+.fee-input {
+  width: 250px;
+}
+
+

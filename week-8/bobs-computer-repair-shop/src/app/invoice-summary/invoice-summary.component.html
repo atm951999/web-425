@@ -1,1 +1,49 @@
-<p>invoice-summary works!</p>
+<!--
+============================================
+; Title: Assignment 5.4
+; Author: Professor Krasso
+; Date: 05 September 2021
+; Modified By: Angela Martin
+; Description: This program demonstrates the
+; use of Angular.
+;===========================================
+-->
+
+<mat-card>
+  <mat-card-content>
+    <h2 mat-dialog-title><mat-icon>laptop_windows</mat-icon>Bob's Computer Repair Shop</h2>
+
+    <div>
+      <img src="assets/computer-bobs.jpg" width="100%">
+    </div>
+
+    <h2 mat-dialog-title>Invoice Summary</h2>
+
+    <h3 mat-dialog-title>Today's Date: {{today|date:"longDate"}}</h3>
+
+    <div fxLayout="row" width="35%" style="min-height: 200px">
+      <div fxFlex>
+        <div class="service-data" *ngFor="let service of services">
+          <span>{{service.title}}</span> ${{service.amount}}
+        </div>
+        <div style="margin-top: 20px; font-weight: bold;">
+          <span>Total Charges</span> ${{total}}
+        </div>
+      </div>
+
+      <div fxFlex fxLayout="column">
+
+        <div fxFlex class="right"><button mat-raised-button mat-button class="bobs-color service-button">Print</button></div>
+
+        <div class="right"><button mat-raised-button mat-button class="bobs-color service-button">Save As</button></div>
+
+      </div>
+
+    </div>
+    <div>
+      <button mat-raised-button matDialogClose="cancel" class="bobs-color service-button">Close</button>
+    </div>
+  </mat-card-content>
+
+</mat-card>
+

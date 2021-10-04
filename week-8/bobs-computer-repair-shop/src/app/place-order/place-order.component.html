@@ -1,1 +1,55 @@
-<p>place-order works!</p>
+<!--
+============================================
+; Title: Assignment 5.4
+; Author: Professor Krasso
+; Date: 05 September 2021
+; Modified By: Angela Martin
+; Description: This program demonstrates the
+; use of Angular.
+;===========================================
+-->
+
+
+<div>
+  <div fxLayout="column" fxLayoutGap="10px" style="margin: 0 auto 25px auto; width: 80%;">
+
+    <div fxFlex>
+      <h1 class="text-center">Please Choose Your Services</h1>
+    </div>
+
+    <div class="bottom-border" fxFlex>
+
+      <mat-card>
+        <mat-card-content>
+
+              <div>
+                <div fxLayout="row wrap">
+                  <ng-container *ngFor="let repair of repairs; let theLast = last;">
+
+                    <div *ngIf="!theLast" class="text-align" fxFlex="50%">
+                      <mat-checkbox [(ngModel)]="repair.checked">{{repair.title}} (${{repair.amount}})</mat-checkbox>
+                    </div>
+                    <div *ngIf="theLast" class="text-center" fxFlex="100%">
+                      <mat-checkbox [(ngModel)]="repair.checked">{{repair.title}} (${{repair.amount}})</mat-checkbox>
+                    </div>
+                  </ng-container>
+
+                </div>
+              </div>
+
+        </mat-card-content>
+      </mat-card>
+
+    </div>
+    <div class="bottom-border">
+      <h4>Standard Fees</h4>
+      <h3 class="fee-label">Part:</h3><input [(ngModel)]="parts" class="fee-input" matInput placeholder="Enter Value.." type="number" min="0"><br>
+      <h3 class="fee-label">Labor:</h3><input [(ngModel)]="labor"class="fee-input" matInput placeholder="Hours of Labor @ $50.00" type="number" min="0">
+    </div>
+    <div class="right">
+      <button (click)="submit()" mat-button class="bobs-color">Calculate</button>
+    </div>
+
+  </div>
+
+</div>
